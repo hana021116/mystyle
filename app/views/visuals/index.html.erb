@@ -1,0 +1,77 @@
+<div class="indexall">
+<h1>GeekTwitter</h1>
+
+<h2>投稿一覧</h2>
+
+<div class="itirankensaku">
+    <h3>投稿を検索</h3>
+<%= search_form_for @q  do |f| %>
+    <div class="kennsakutag">
+    <i><%= f.select :tall_cont, [['~155', '~155'], ['~160', '~160'], ['~165', '~165'], ['~170', '~170'], ['~175', '~175'], ['~180', '~180'], ['180~', '180~']] , {include_blank: '身長'}  %></i>
+    <i><%= f.select :weight_cont, [['~45', '~45'], ['~50', '~50'], ['~55', '~55'], ['~60', '~60'], ['~65', '~65'], ['65~', '65~']] , {include_blank: '体重'}  %></i>
+    <i><%= f.select :color_cont, [['イエベ春', 'イエベ春'], ['ブルベ夏', 'ブルベ夏'], ['イエベ秋', 'イエベ秋'], ['ブルベ冬', 'ブルベ冬']] , {include_blank: 'パーソナルカラー'}  %></i>
+    <i><%= f.select :style_cont, [['ストレート', 'ストレート'], ['ウェーブ', 'ウェーブ'], ['ナチュラル', 'ナチュラル']] , {include_blank: '骨格'}  %></i>
+
+    <%= f.submit "検索" %>
+    </div>
+<% end %>
+
+</div>
+<h2>〜人気の投稿〜</h2>
+<div class="postbox">
+<% @rank_visuals.each do |t| %>
+
+    <div class="visual">
+        <div class="popularimage">
+        <div class="imagebox">
+        <%= image_tag t.image_url, size: "200x200" if t.image? %><br>
+        <%=  video_tag t.video_url ,:controls => true if t.video?%>
+        </div>
+        <div>
+        <%= link_to t.user.name, user_path(t.user.id) %>
+        </div>
+        <%= t.body %>
+        </div>
+    <% if user_signed_in? %>
+        <% if current_user.already_liked?(t) %>
+            <div class="iine">
+            <%= button_to visual_like_path(id: t.id, visual_id: t.id),class:"nongood", method: :delete do %>
+                <p>いいねを取り消す</p>
+            <% end %>
+            <div class="iinekazu">
+            <%= t.likes.count %>
+            </div>
+            </div>
+        <% else %>
+            <div class="iine">
+            <%= button_to visual_likes_path(id: t.id, visual_id: t.id),class:"good", method: :post do %>
+                <p>いいね</p>
+            <% end %>
+            <div class="iinekazu">
+            <%= t.likes.count %>
+            </div>
+            </div>
+        <% end %>
+    <% else %>
+        <p>いいねの数 = </p><%= t.likes.count %>
+    <% end %>
+        <%= t.created_at %>
+        <div>
+        <%= link_to "詳細へ", visual_path(t.id) %> 
+        <%= link_to "編集する", edit_visual_path(t.id) %>
+        </div>
+        <%= button_to "削除する", visual_path(t.id), method: :delete %>
+        <% if t.photo.attached? %>
+        <%= image_tag t.photo, size: '250x200'%>
+    <% end %>
+    </div>
+<% end %>
+</div>
+<%= link_to "新規投稿へ", visuals_new_path %>
+<div class="visuals-container">
+<% if user_signed_in? %>
+    <%= link_to "マイページへ", user_path(current_user.id) %>
+<% end %>
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+</div>
+</div>

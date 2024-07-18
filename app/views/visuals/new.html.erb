@@ -1,0 +1,26 @@
+<div class="newall">
+<div class="newtitle">
+<h1>GeekTwitter</h1>
+<h3>新規投稿</h3>
+</div>
+<%= form_for @visual do |f| %>
+    <%= f.label :画像 %>
+    <%= f.file_field :image %>
+    
+    <%= f.label :動画 %>
+    <%= f.file_field :video %>
+    <div class="selectall">
+    <p><%= f.select :tall, [['~155', '~155'], ['~160', '~160'], ['~165', '~165'], ['~170', '~170'], ['~175', '~175'], ['~180', '~180'], ['180~', '180~']] , {include_blank: '身長'}  %></p>
+    <p><%= f.select :weight, [['~45', '~45'], ['~50', '~50'], ['~55', '~55'], ['~60', '~60'], ['~65', '~65'], ['65~', '65~']] , {include_blank: '体重'}  %></p>
+    <p><%= f.select :color, [['イエベ春', 'イエベ春'], ['ブルベ夏', 'ブルベ夏'], ['イエベ秋', 'イエベ秋'], ['ブルベ冬', 'ブルベ冬']] , {include_blank: 'パーソナルカラー'}  %></p>
+    <p><%= f.select :style, [['ストレート', 'ストレート'], ['ウェーブ', 'ウェーブ'], ['ナチュラル', 'ナチュラル']] , {include_blank: '骨格'}  %></p>
+    </div>
+    
+    <%= f.label :コメント %>
+    <%= f.text_field :body, :size => 40 %>
+
+    <%= f.submit "投稿する" %>
+    
+<% end %>
+    <%= link_to "投稿一覧に戻る", visuals_path %>
+</div>

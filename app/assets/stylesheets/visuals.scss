@@ -1,0 +1,187 @@
+// Place all the styles related to the visuals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.newall{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #000000;
+    background: #ffdff9;
+    border: solid 3px #ffdff9;
+    border-radius: 10px;
+    text-align: center;
+    font-family: "monospace";
+    
+}
+.selectall{
+    
+    display: flex;
+    justify-content: center;
+    p{
+        margin-right: 5px;
+    }
+    font-family: "monospace";
+}
+.newtitle{
+    text-align: center;
+    font-family: "monospace";
+}
+.itirankensaku{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i{
+        margin-right: 5px;
+    }
+
+}
+.indexall{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #000000;
+    background: #ffdff9;
+    border: solid 3px #ffdff9;
+    border-radius: 10px;
+    text-align: center;
+    font-family: "monospace";
+}
+.showall{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #000000;
+    background: #ffdff9;
+    border: solid 3px #ffdff9;
+    border-radius: 10px;
+    text-align: center;
+    font-family: "monospace";
+}
+.maipe-jihenshuuall{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #000000;
+    background: #ffdff9;
+    border: solid 3px #ffdff9;
+    border-radius: 10px;
+    text-align: center;
+    font-family: "monospace";
+}
+.shousaiall{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #000000;
+    background: #ffdff9;
+    border: solid 3px #ffdff9;
+    border-radius: 10px;
+    text-align: center;
+    font-family: "monospace";
+}
+.komenntohennshuu{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #000000;
+    background: #ffdff9;
+    border: solid 3px #ffdff9;
+    border-radius: 10px;
+    text-align: center;
+    font-family: "monospace";
+    
+}
+.pasuwa-doall{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #000000;
+    background: #ffdff9;
+    border: solid 3px #ffdff9;
+    border-radius: 10px;
+    text-align: center;
+    font-family: "monospace";
+}
+.showimage{
+    display: flex;
+    justify-content: center;
+}
+
+.postbox{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.visual{
+    width: 20%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    padding-top: 30px;
+}
+
+.imagebox{
+    padding-bottom: 20px;
+}
+
+.kennsakutag{
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.mypagebox{
+    width: 20%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    padding-top: 30px;
+}
+
+.nametag{
+    padding-right: 50px;
+}
+
+.good{
+    display: inline-block;
+    text-decoration: none;
+    background: #ffdff9;
+    color: #FFF;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    overflow: hidden;
+    transition: .4s;
+    font-family: "monospace";
+}
+
+.nongood{
+    display: inline-block;
+    text-decoration: none;
+    background: #ff8181;
+    color: #FFF;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    overflow: hidden;
+    font-family: "monospace";
+
+}
+
+.iine{
+    display: flex;
+    justify-content: center;
+    font-family: "monospace";
+}
+
+.iinekazu{
+    padding-left: 5px;
+}
+

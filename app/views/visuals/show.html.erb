@@ -1,0 +1,35 @@
+<div class="shousaiall">
+<h1>GeekTwitter</h1>
+<h3>投稿詳細</h3>
+<div class="visual">
+    <%= image_tag @visual.image_url, size: "200x200" if @visual.image? %><br>
+    <%=  video_tag @visual.video_url ,:controls => true if @visual.video?%>
+    <p><%= @visual.body %></p>
+    <p><%= @visual.created_at %></p>
+    <% if user_signed_in? %>
+        <% if current_user.already_liked?(@visual) %>
+            <%= link_to visual_like_path(@visual),class:"good", method: :delete do %>
+                <p>いいねを取り消す</p><%= @visual.likes.count %>
+            <% end %>
+        <% else %>
+            <%= link_to visual_likes_path(@visual),class:"nongood", method: :post do %>
+                <p>いいね</p><%= @visual.likes.count %>
+            <% end %>
+        <% end %>
+    <% else %>
+        <p>いいねの数 = </p><%= @visual.likes.count %>
+    <% end %>
+<div>
+<%= link_to "編集する", edit_visual_path(@visual.id) %>
+</div>
+</div>
+<h2>いいねした友達</h2>
+<% @visual.liked_users.each do |user| %>
+    <li><%= user.name %></li>
+<% end %>
+
+<%= link_to "投稿一覧に戻る", visuals_path %>
+<% @visual.tags.each do |tag| %>
+    <span><%= tag.name %></span>
+<% end %>
+</div>

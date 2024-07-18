@@ -1,0 +1,5 @@
+3.0.7
+<%=  raw Rinku.auto_link(simple_format(@user.content)) %>
+=  raw Rinku.auto_link(simple_format(@user.content), :urls, 'target="_blank"')
+'target="_blank" rel="noopener noreferrer"'
+=  raw Rinku.auto_link(simple_format(@user.content), :urls, 'target="_blank" rel="noopener noreferrer"')
